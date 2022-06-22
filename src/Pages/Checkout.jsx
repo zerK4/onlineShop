@@ -44,7 +44,7 @@ export default function Checkout({
             </div>
             <div className="itemRight flex flex-col justify-between w-2/3 sm:w-1/2">
               <p>{items.title}</p>
-              {items.category === "tech" ? null : items.category ===
+              {items.category === "electronics" ? null : items.category ===
                 "jewelery" ? null : (
                 <button className="p-2 w-20 bg-lime-400 mb-3">
                   {items.size === "" ? "Add a size" : items.size}
