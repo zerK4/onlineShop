@@ -120,7 +120,7 @@ export default function Header({
       </nav>
       <div className="flex">
         <div
-          className="relative flex items-center mr-5 cursor-pointer"
+          className="relative flex items-center mr-5 cursor-pointer z-20"
           onClick={currencyHandler}
         >
           <FcCurrencyExchange className="text-4xl" />
