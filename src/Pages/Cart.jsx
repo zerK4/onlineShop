@@ -59,7 +59,7 @@ export default function Cart({
                 </div>
                 <div className="right">
                   <div className="w-96 h-[8rem]">{items.title}</div>
-                  {items.category === "tech" ? null : items.category ===
+                  {items.category === "electronics" ? null : items.category ===
                     "jewelery" ? null : (
                     <div className="h-10 w-20 bg-black text-gray-50 flex items-center justify-center mt-10">
                       {items.size}
