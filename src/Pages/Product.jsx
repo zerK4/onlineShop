@@ -49,7 +49,7 @@ export default function Product({
               {product.title}
             </p>
             <p className=" mt-10 lg:mt-0">{product.description}</p>
-            {product.category === "tech" ? (
+            {product.category === "electronics" ? (
               <div className="sizes mt-4 flex gap-1 bg-black p-2 text-gray-50">
                 Size is already selected with the item!
               </div>
