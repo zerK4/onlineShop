@@ -18,9 +18,23 @@ export default function Cart({
       ) : (
         <div className="flex gap-10 flex-wrap justify-center items-center w-screen">
           <div className="absolute bg-lime-400 top-20 right-10 shadow-lg px-10 py-3">
-            <div className="">Items Price: {parseInt(itemsPrice)}</div>
+            <div className="">
+              Items Price:{" "}
+              {currency === "EUR"
+                ? parseInt(itemsPrice * 0.94)
+                : currency === "RON"
+                ? parseInt(itemsPrice * 5)
+                : parseInt(itemsPrice)}
+            </div>
             <div className="">Tax Price: {parseInt(taxPrice)}</div>
-            <div className="">Total: {parseInt(totalPrice)}</div>
+            <div className="">
+              Total:{" "}
+              {currency === "EUR"
+                ? parseInt(totalPrice * 0.94)
+                : currency === "RON"
+                ? parseInt(totalPrice * 5)
+                : parseInt(totalPrice)}
+            </div>
             <Link to="/checkout">
               <button className="mt-5 bg-gray-100 h-10 w-full hover:bg-gray-200 ease-in-out duration-200">
                 Checkout
