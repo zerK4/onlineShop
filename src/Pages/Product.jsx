@@ -1,21 +1,36 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+
 export default function Product({
-  product,
   currency,
   addToCart,
   size,
   setSize,
   sizeHandler,
 }) {
-  if (!product) {
+  const [product, setProduct] = useState([]);
+  const { id } = useParams();
+  const getOne = async () => {
+    try {
+      const response = await axios.get(
+        `https://fakestoreapi.com/products/${id}`,
+        {
+          headers: { "Access-Control-Allow-Origin": "*" },
+        }
+      );
+      setProduct(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  useEffect(() => {
+    getOne();
+  }, [id]);
+  if (product.length === 0) {
     return (
       <div className="w-full mt-40 text-4xl flex items-center justify-center">
-        <div className="w-2/3">
-          Hello, if you got here you found my error, i`m using a local json file
-          from where i`m fetching the data and i cannot keep it here without
-          adding it to local store.
-          <br></br>
-          You have to go to menu and select an item once more.
-        </div>
+        <div className="w-2/3 text-center">Loading...</div>
       </div>
     );
   } else {
@@ -128,10 +143,10 @@ export default function Product({
             )}
             <div className="mt-10 flex justify-between">
               <div className="bg-slate-200 p-2 rounded-md">
-                Reviews: {product.rating.count}{" "}
+                Reviews: {product.rating?.count}{" "}
               </div>
               <div className="bg-slate-200 p-2 rounded-md">
-                Stars: {product.rating.rate}
+                Stars: {product.rating?.rate}
               </div>
             </div>
             <div className="flex justify-between text-xl mt-10">
