@@ -24,16 +24,16 @@ export default function Cart({
                 ? parseInt(itemsPrice * 0.94)
                 : currency === "RON"
                 ? parseInt(itemsPrice * 5)
-                : parseInt(itemsPrice)}
+                : parseInt(itemsPrice)}{" "}{currency}
             </div>
-            <div className="">Tax Price: {parseInt(taxPrice)}</div>
+            <div className="">Tax Price: {parseInt(taxPrice)}{" "}{currency}</div>
             <div className="">
               Total:{" "}
               {currency === "EUR"
                 ? parseInt(totalPrice * 0.94)
                 : currency === "RON"
                 ? parseInt(totalPrice * 5)
-                : parseInt(totalPrice)}
+                : parseInt(totalPrice)}{" "}{currency}
             </div>
             <Link to="/checkout">
               <button className="mt-5 bg-gray-100 h-10 w-full hover:bg-gray-200 ease-in-out duration-200">
