@@ -39,14 +39,14 @@ export default function Product({
         <div className="relative flex flex-wrap items-center w-full shadow-xl flex-col lg:w-5/6 p-10 lg:justify-between lg:flex-row">
           <div
             className={
-              product.stock === 0
+              product.rating.rate < 2.5
                 ? "absolute top-0 right-0 rounded-lg flex shadow-2xl text-gray-50 font-bold shadow-red-500 justify-center items-center text-xl w-full h-10 bg-red-600"
                 : product.stock < 10
                 ? "absolute top-0 right-0 rounded-lg flex shadow-2xl text-gray-50 font-bold shadow-yellow-300 justify-center items-center text-xl w-full h-10 bg-yellow-300"
                 : null
             }
           >
-            {product.stock === 0 ? (
+            {product.rating.rate < 2.5 ? (
               "Out of Stock"
             ) : product.stock < 10 ? (
               <p>Hurry up, only {product.stock} available now!</p>
@@ -160,10 +160,10 @@ export default function Product({
               </p>
               <button
                 onClick={(e) => {
-                  product.stock !== 0 ? addToCart(product) : null;
+                  product.rating.rate- > 2.5 ? addToCart(product) : null;
                 }}
                 className={
-                  product.stock !== 0
+                  product.rating.rate- > 2.5
                     ? "bg-lime-400 p-3 rounded-md shadow-xl text-gray-50 font-bold hover:shadow-lime-400 ease-in-out duration-200"
                     : "bg-red-500 p-3 rounded-md shadow-xl text-gray-50 font-bold hover:shadow-red-400 ease-in-out duration-200 cursor-not-allowed"
                 }
