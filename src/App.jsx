@@ -9,7 +9,6 @@ import axios from "axios";
 
 function App() {
   const [products, setProducts] = useState("");
-  const [product, setProduct] = useState([]);
   const [id, setId] = useState();
   const [category, setCategory] = useState("All");
   const [filtered, setFiltered] = useState([]);
@@ -41,7 +40,6 @@ function App() {
         console.error(error);
       }
     };
-    filterProduct();
     getProducts();
   }, [category, id]);
   const categoryHandler = (e) => {
@@ -51,11 +49,6 @@ function App() {
     setCurrency(e.target.value);
   };
 
-  const filterProduct = () => {
-    products.length === 0
-      ? "Loading..."
-      : setProduct(products.filter((products) => products.id === id));
-  };
   const filterCategoryHandler = (e) => {
     switch (category) {
       case "All":
@@ -161,7 +154,6 @@ function App() {
           path="/product/:id"
           element={
             <Product
-              product={product[0]}
               currency={currency}
               setCurrencyActive={setCurrencyActive}
               addToCart={addToCart}
