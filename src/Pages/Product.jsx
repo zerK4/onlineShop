@@ -160,10 +160,10 @@ export default function Product({
               </p>
               <button
                 onClick={(e) => {
-                  product.rating.rate- > 2.5 ? addToCart(product) : null;
+                  product.rating.rate > 2.5 ? addToCart(product) : null;
                 }}
                 className={
-                  product.rating.rate- > 2.5
+                  product.rating.rate > 2.5
                     ? "bg-lime-400 p-3 rounded-md shadow-xl text-gray-50 font-bold hover:shadow-lime-400 ease-in-out duration-200"
                     : "bg-red-500 p-3 rounded-md shadow-xl text-gray-50 font-bold hover:shadow-red-400 ease-in-out duration-200 cursor-not-allowed"
                 }
