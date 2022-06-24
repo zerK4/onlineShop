@@ -32,7 +32,7 @@ function App() {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const response = await axios.get("https://fakestoreapi.com/products", {
+        const response = await axios.get("https://next-api-tan-kappa.vercel.app/api/now", {
           headers: { "Access-Control-Allow-Origin": "*" },
         });
         setProducts(response.data);
