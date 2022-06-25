@@ -59,18 +59,18 @@ function App() {
       case "Women":
         setFiltered(
           products.filter(
-            (products) => products.category === "women's clothing"
+            (products) => products.category === "women"
           )
         );
         break;
       case "Men":
         setFiltered(
-          products.filter((products) => products.category === "men's clothing")
+          products.filter((products) => products.category === "men")
         );
         break;
       case "Tech":
         setFiltered(
-          products.filter((products) => products.category === "electronics")
+          products.filter((products) => products.category === "tech")
         );
         break;
       case "Jewelry":
