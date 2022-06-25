@@ -56,17 +56,13 @@ function App() {
       case "All":
         setFiltered(products);
         break;
-      case "Women":
+     case "Women":
         setFiltered(
-          products.filter(
-            (products) => products.category === "women"
-          )
+          products.filter((products) => products.category === "women")
         );
         break;
       case "Men":
-        setFiltered(
-          products.filter((products) => products.category === "men")
-        );
+        setFiltered(products.filter((products) => products.category === "men"));
         break;
       case "Tech":
         setFiltered(
