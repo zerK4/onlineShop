@@ -32,7 +32,7 @@ function App() {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const response = await axios.get("http://fakestoreapi.com/products", {
+        const response = await axios.get("https://fakestoreapi.com/products", {
           headers: { "Access-Control-Allow-Origin": "*",
                     "Content-Type": "application/json",
                    },
