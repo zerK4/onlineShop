@@ -33,7 +33,9 @@ function App() {
     const getProducts = async () => {
       try {
         const response = await axios.get("http://fakestoreapi.com/products", {
-          headers: { "Access-Control-Allow-Origin": "*" },
+          headers: { "Access-Control-Allow-Origin": "*",
+                    "Content-Type": "application/json",
+                   },
         });
         setProducts(response.data);
       } catch (error) {
